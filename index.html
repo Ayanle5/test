@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ayanle — Design Portfolio</title>
+<style>
+:root{--bg:#faf8f5;--fg:#1c1b1a;--muted:#6b6862;--card:#fff;--line:#e4e0d9;--accent:#e5502b;color-scheme:light;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#151413;--fg:#f2efea;--muted:#a19d95;--card:#1f1d1b;--line:#33302c;--accent:#ff7a55;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#151413;--fg:#f2efea;--muted:#a19d95;--card:#1f1d1b;--line:#33302c;--accent:#ff7a55;color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.6 Georgia,"Times New Roman",serif}
+a{color:var(--accent)}
+nav{display:flex;justify-content:space-between;align-items:center;max-width:1040px;margin:0 auto;padding:20px 24px;font:600 14px/1 system-ui,sans-serif}
+nav div{display:flex;gap:20px}
+nav a{color:var(--fg);text-decoration:none}
+nav a:hover{color:var(--accent)}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+.hero{padding:80px 0 64px}
+.tag{font:600 13px/1 system-ui,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin:0 0 18px}
+.hero h1{font-size:clamp(44px,9vw,96px);line-height:1;margin:0 0 22px;letter-spacing:-.03em}
+.hero h1 span{color:var(--accent);font-style:italic}
+.hero p{font-size:clamp(18px,2.4vw,22px);max-width:560px;color:var(--muted);margin:0 0 28px}
+.btn{display:inline-block;background:var(--fg);color:var(--bg);padding:14px 24px;border-radius:999px;text-decoration:none;font:600 15px/1 system-ui,sans-serif;margin-right:8px}
+.btn:hover{background:var(--accent);color:#fff}
+.btn.ghost{background:transparent;color:var(--fg);border:1px solid var(--line)}
+section{padding:56px 0;border-top:1px solid var(--line)}
+h2{font-size:clamp(28px,5vw,40px);margin:0 0 8px;letter-spacing:-.02em}
+.sub{color:var(--muted);margin:0 0 28px}
+.work{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
+.proj{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;transition:transform .2s}
+.proj:hover{transform:translateY(-4px)}
+.thumb{height:180px;position:relative;overflow:hidden}
+.thumb i{position:absolute;display:block}
+.t1{background:#e5502b}.t1 i:nth-child(1){width:120px;height:120px;border-radius:50%;background:#faf8f5;left:30px;top:30px}
+.t1 i:nth-child(2){width:90px;height:90px;background:#1c1b1a;right:40px;bottom:-20px;transform:rotate(20deg)}
+.t2{background:#1c1b1a}.t2 i:nth-child(1){width:70%;height:14px;background:#faf8f5;left:24px;top:40px;border-radius:7px}
+.t2 i:nth-child(2){width:45%;height:14px;background:#e5502b;left:24px;top:68px;border-radius:7px}
+.t2 i:nth-child(3){width:60%;height:14px;background:#6b6862;left:24px;top:96px;border-radius:7px}
+.t3{background:#d9d2c5}.t3 i{width:70px;height:110px;border-radius:12px;background:#1c1b1a;top:35px}
+.t3 i:nth-child(1){left:40px}.t3 i:nth-child(2){left:130px;background:#e5502b;top:50px}.t3 i:nth-child(3){left:220px;top:65px}
+.t4{background:#2e4a45}.t4 i:nth-child(1){width:140px;height:140px;border:14px solid #faf8f5;border-radius:50%;left:40px;top:20px}
+.t4 i:nth-child(2){width:60px;height:60px;background:#e5502b;border-radius:50%;left:150px;top:90px}
+.info{padding:18px 20px 22px}
+.info small{font:600 12px/1 system-ui,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+.info h3{margin:8px 0 4px;font-size:21px}
+.info p{margin:0;color:var(--muted);font-size:15.5px}
+.about{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:32px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;padding:0;list-style:none;margin:0}
+.chips li{padding:8px 14px;border:1px solid var(--line);border-radius:999px;background:var(--card);font:500 14px/1 system-ui,sans-serif}
+.contact{text-align:center}
+.contact h2{font-size:clamp(32px,7vw,64px)}
+footer{padding:28px 0 44px;border-top:1px solid var(--line);color:var(--muted);font:14px/1.5 system-ui,sans-serif;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+</style>
+</head>
+<body>
+<nav><strong>Ayanle</strong><div><a href="#work">Work</a><a href="#about">About</a><a href="#contact">Contact</a></div></nav>
+<div class="wrap">
+<header class="hero">
+<p class="tag">Designer · London</p>
+<h1>I design things that <span>feel</span> effortless.</h1>
+<p>Brand, interface and visual design with a focus on clarity, craft and a little personality.</p>
+<a class="btn" href="#work">See my work</a><a class="btn ghost" href="#contact">Get in touch</a>
+</header>
+
+<section id="work">
+<h2>Selected work</h2>
+<p class="sub">A few recent projects.</p>
+<div class="work">
+<article class="proj"><div class="thumb t1"><i></i><i></i></div><div class="info"><small>Branding</small><h3>Project One</h3><p>Identity system with logo, palette and type for a new startup.</p></div></article>
+<article class="proj"><div class="thumb t2"><i></i><i></i><i></i></div><div class="info"><small>Web design</small><h3>Project Two</h3><p>Redesigned a content-heavy site for clarity and speed.</p></div></article>
+<article class="proj"><div class="thumb t3"><i></i><i></i><i></i></div><div class="info"><small>App UI</small><h3>Project Three</h3><p>Mobile-first interface for a daily habit tracker.</p></div></article>
+<article class="proj"><div class="thumb t4"><i></i><i></i></div><div class="info"><small>Poster</small><h3>Project Four</h3><p>Print series exploring shape, colour and rhythm.</p></div></article>
+</div>
+</section>
+
+<section id="about">
+<div class="about">
+<div><h2>About</h2><p class="sub" style="margin:0">I’m a designer based in London. I like simple layouts, strong typography and products that are easy to use. I work from first sketch through to polished, shipped design.</p></div>
+<div><h2 style="font-size:24px">Skills</h2>
+<ul class="chips"><li>Branding</li><li>UI / UX</li><li>Typography</li><li>Prototyping</li><li>Illustration</li><li>Print</li></ul></div>
+</div>
+</section>
+
+<section id="contact" class="contact">
+<h2>Let’s work together.</h2>
+<p class="sub">Open to freelance and full-time roles.</p>
+<a class="btn" href="mailto:hello@example.com">hello@example.com</a>
+</section>
+<footer><span>© 2026 Ayanle</span><span>Designed in London</span></footer>
+</div>
+</body>
+</html>
